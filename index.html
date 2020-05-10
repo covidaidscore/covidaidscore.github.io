@@ -1,6 +1,16 @@
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
+
+    <style type="text/css" >
+body {
+background: rgb(12,198,222);
+background: linear-gradient(90deg, rgba(12,198,222,0.27914915966386555) 0%, rgba(60,152,218,0.2763480392156863) 7%, rgba(55,154,208,0.27914915966386555) 17%, rgba(59,235,231,0.2539390756302521) 51%, rgba(153,255,149,0.23713235294117652) 85%);
+}
+
+
+    </style>
+
 <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -10,27 +20,28 @@
 <title>COVID-AID SCORE</title> 
 </head>
 <body>
+
 <div class = "container">
-COVID-AID SCORE: <br>
+<h1>COVID-AID SCORE</h1> <br>
 <br>
 A Prediction Model for Short-Term Mortality Among Hospitalized COVID-19 Patients <br>
 <br> 
 <form>
   <div class="form-group row">
-    <label class="col-sm">Age, Years</label>
-    <div class="col-sm"><input type="text" id="age"></div>
+    <label class="col-sm-3">Age, Years</label>
+    <div class="col-sm"><input type="text" id="age" class="form-control"></div>
   </div>
  <div class="form-group row">
-    <label class="col-sm">Mean Arterial pressure, mmHg</label>
-    <div class="col-sm"><input type="text" id="map"></div>
+    <label class="col-sm-3">Mean Arterial pressure, mmHg</label>
+    <div class="col-sm"><input type="text" id="map" class="form-control"></div>
   </div>
  <div class="form-group row">
-    <label class="col-sm">Serum Creatinine, mg/dL</label>
-    <div class="col-sm"><input type="text" id="scr"></div>
+    <label class="col-sm-3">Serum Creatinine, mg/dL</label>
+    <div class="col-sm"><input type="text" id="scr" class="form-control"></div>
   </div>
  <div class="form-group row">
-    <label class="col-sm">Severe Hypoxemia* Yes=1, No=0</label>
-    <div class="col-sm"><input type="text" id="hypox"></div>
+    <label class="col-sm-3">Severe Hypoxemia* Yes=1, No=0</label>
+    <div class="col-sm"><input type="text" id="hypox" class="form-control"></div>
   </div>
   <div class="form-group row">
 *severe hypoxemia defined as needing more than 4 liters of supplemental oxygen, non-rebreather mask or non-invasive (e.g. BiPAP) or invasive ventilation to maintain an oxygen saturation of >=90% , or failure to maintain an oxygen saturation of >=90%
@@ -40,12 +51,16 @@ A Prediction Model for Short-Term Mortality Among Hospitalized COVID-19 Patients
   </div>
 </form>
 <br>
-7-Day Mortality, %  <p id="m7"> </p> <br>
-14-Day Mortality, %  <p id="m14"> </p> <br>
+<h5>7-Day Mortality, %  <p id="m7"> </p></h5> <br>
+<h5>14-Day Mortality, %  <p id="m14"> </p></h5> <br>
+<br>
+<br>
+<br>
 -Division of Gastroenterology and Hepatology, Weill Cornell Medicine, New York-Presbyterian Hospital, New York, NY, USA
 <br>
 -Division of Gastroenterology, Hepatology and Endoscopy, Brigham and Women's Hospital, Boston, MA, USA
 </div>
+
 <script type="text/javascript">
 console.log("hello"); 
 function calculate(){
