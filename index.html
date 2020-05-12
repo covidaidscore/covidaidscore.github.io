@@ -40,8 +40,15 @@
             <div class="col-sm"><input type="text" id="scr" class="form-control"></div>
         </div>
         <div class="form-group row">
-            <label class="col-sm-3" for="hypox">Severe Hypoxemia* Yes=1, No=0</label>
-            <div class="col-sm"><input type="text" id="hypox" class="form-control"></div>
+            <label class="col-sm-3">Severe Hypoxemia*</label>
+            <div class="col-sm">
+                <div class="form-check">
+                    <input class="form-check-input" name="hypox" type="radio" value="1" id="hypox1" checked><label for="hypox1">yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="hypox" type="radio" value="0" id="hypox2"><label for="hypox2">no</label>
+                </div>
+            </div>
         </div>
         <div class="form-group row">
             <div class="col-sm">
@@ -81,32 +88,32 @@
     console.log("hello");
 
     function calculate() {
-        var age = parseInt(document.getElementById("age").value);
-        var map = parseInt(document.getElementById("map").value);
-        var scr = parseInt(document.getElementById("scr").value);
-        var hypox = parseInt(document.getElementById("hypox").value);
+        let age = parseInt(document.getElementById("age").value);
+        let map = parseInt(document.getElementById("map").value);
+        let scr = parseInt(document.getElementById("scr").value);
+        let hypox = parseInt(document.querySelector('input[name="hypox"]:checked').value)
 
-        var scr2
+            let scr2;
         if (scr >= 2) scr2 = 1
         if (scr < 2) scr2 = 0
 
-        var m7 = 100 * (Math.exp(Math.log(age) * 6.4947 +
+        let m7 = 100 * (Math.exp(Math.log(age) * 6.4947 +
             Math.log(map) * (-2.5365) +
             0.3197 * (scr2) +
             0.5864 * (hypox) - 19.0309)) /
             (1 + Math.exp(Math.log(age) * 6.4947 +
                 Math.log(map) * (-2.5365) +
                 0.3197 * (scr2) +
-                0.5864 * (hypox) - 19.0309))
+                0.5864 * (hypox) - 19.0309));
 
-        var m14 = 100 * (Math.exp(Math.log(age) * 5.9314 +
+        let m14 = 100 * (Math.exp(Math.log(age) * 5.9314 +
             Math.log(map) * (-1.8549) +
             0.5365 * (scr2) +
             0.4425 * (hypox) - 19.2738)) /
             (1 + Math.exp(Math.log(age) * 5.9314 +
                 Math.log(map) * (-1.8549) +
                 0.5365 * (scr2) +
-                0.4425 * (hypox) - 19.2738))
+                0.4425 * (hypox) - 19.2738));
 
         document.getElementById("m7").innerHTML = m7.toFixed(1);
         document.getElementById("m14").innerHTML = m14.toFixed(1);
