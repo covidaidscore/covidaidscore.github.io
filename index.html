@@ -30,8 +30,13 @@
     </div>
 
     <div class="row">
-        <div class="col-sm mb-5">
+        <div class="col-sm mb-4">
             <h6>A Prediction Model for Short-Term Mortality Among Hospitalized COVID-19 Patients</h6>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm mb-3">
+            <h6>This model calculates the risk of death based on the following variables measured at presentation</h6>
         </div>
     </div>
 
@@ -44,11 +49,11 @@
                     <div class="col-sm-3"><input type="text" id="age" class="form-control"></div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3" for="dbp">Diastolic Blood pressure</label>
+                    <label class="col-sm-3" for="dbp">Diastolic Blood pressure, mmHg</label>
                     <div class="col-sm-3"><input type="text" id="dbp" class="form-control"></div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-sm-3" for="sbp">Systolic Blood pressure</label>
+                    <label class="col-sm-3" for="sbp">Systolic Blood pressure, mmHg</label>
                     <div class="col-sm-3"><input type="text" id="sbp" class="form-control"></div>
                 </div>
                 <div class="form-group row">
@@ -104,10 +109,6 @@
                     <div class="col-sm">
                         -Division of Gastroenterology and Hepatology, Weill Cornell Medicine, New York-Presbyterian
                         Hospital, New York, NY, USA
-                        <br>
-                        -Division of Gastroenterology, Hepatology and Endoscopy, Brigham and Women's Hospital, Boston,
-                        MA,
-                        USA
                     </div>
                 </div>
             </form>
@@ -149,8 +150,12 @@
                 0.5365 * (scr2) +
                 0.4425 * (hypox) - 19.2738));
 
-        document.getElementById("m7").innerHTML = Math.floor(m7);
-        document.getElementById("m14").innerHTML = Math.ceil(m14);
+        let roundedM7 = Math.floor(m7);
+        let roundedM14 = Math.ceil(m14);
+        let adjustedM14 = Math.max(roundedM14, roundedM7)
+
+        document.getElementById("m7").innerHTML = roundedM7;
+        document.getElementById("m14").innerHTML = adjustedM14;
     }
 
 
