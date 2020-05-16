@@ -150,8 +150,8 @@
                 0.5365 * (scr2) +
                 0.4425 * (hypox) - 19.2738));
 
-        let roundedM7 = Math.floor(m7);
-        let roundedM14 = Math.ceil(m14);
+        let roundedM7 = Math.round(m7);
+        let roundedM14 = Math.round(m14);
         let adjustedM14 = Math.max(roundedM14, roundedM7)
 
         document.getElementById("m7").innerHTML = roundedM7;
