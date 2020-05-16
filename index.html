@@ -126,7 +126,7 @@
         let scr = parseInt(document.getElementById("scr").value);
         let hypox = parseInt(document.querySelector('input[name="hypox"]:checked').value)
 
-        let map = Math.min((2 * dbp + sdb) / 3, 55)
+        let map = Math.max((2 * dbp + sdb) / 3, 55)
 
         let scr2;
         if (scr >= 2) scr2 = 1
