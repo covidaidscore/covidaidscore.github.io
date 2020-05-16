@@ -22,78 +22,112 @@
 <body>
 
 <div class="container">
-    <h1>COVID-AID SCORE</h1> <br>
-    <br>
-    A Prediction Model for Short-Term Mortality Among Hospitalized COVID-19 Patients <br>
-    <br>
-    <form>
-        <div class="form-group row">
-            <label class="col-sm-3" for="age">Age, Years</label>
-            <div class="col-sm"><input type="text" id="age" class="form-control"></div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3" for="map">Mean Arterial pressure, mmHg</label>
-            <div class="col-sm"><input type="text" id="map" class="form-control"></div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3" for="scr">Serum Creatinine, mg/dL</label>
-            <div class="col-sm"><input type="text" id="scr" class="form-control"></div>
-        </div>
-        <div class="form-group row">
-            <label class="col-sm-3">Severe Hypoxemia*</label>
-            <div class="col-sm">
-                <div class="form-check">
-                    <input class="form-check-input" name="hypox" type="radio" value="1" id="hypox1" checked><label for="hypox1">yes</label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" name="hypox" type="radio" value="0" id="hypox2"><label for="hypox2">no</label>
-                </div>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm">
-                *severe hypoxemia defined as needing more than 4 liters of supplemental oxygen, non-rebreather mask or
-                non-invasive (e.g. BiPAP) or invasive ventilation to maintain an oxygen saturation of >=90% , or failure to
-                maintain an oxygen saturation of >=90%
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm">
-                <label type="submit" class="btn btn-primary" onclick="calculate()">Calculate Mortality Risk</label>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm">
-                <h5>7-Day Mortality, % <div id="m7"></div></h5>
-            </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm">
-                <h5>14-Day Mortality, % <div id="m14"></div></h5>
-            </div>
-        </div>
 
-        <div class="row pt-5">
-            <div class="col-sm">
-                -Division of Gastroenterology and Hepatology, Weill Cornell Medicine, New York-Presbyterian Hospital, New York, NY, USA
-                <br>
-                -Division of Gastroenterology, Hepatology and Endoscopy, Brigham and Women's Hospital, Boston, MA, USA
-            </div>
+    <div class="row">
+        <div class="col-sm">
+            <h1>COVID-AID SCORE</h1>
         </div>
-    </form>
+    </div>
+
+    <div class="row">
+        <div class="col-sm mb-5">
+            <h6>A Prediction Model for Short-Term Mortality Among Hospitalized COVID-19 Patients</h6>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+
+            <form>
+                <div class="form-group row">
+                    <label class="col-sm-3" for="age">Age, Years</label>
+                    <div class="col-sm-3"><input type="text" id="age" class="form-control"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3" for="dbp">Diastolic Blood pressure</label>
+                    <div class="col-sm-3"><input type="text" id="dbp" class="form-control"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3" for="sbp">Systolic Blood pressure</label>
+                    <div class="col-sm-3"><input type="text" id="sbp" class="form-control"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3" for="scr">Serum Creatinine, mg/dL</label>
+                    <div class="col-sm-3"><input type="text" id="scr" class="form-control"></div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-3">Severe Hypoxemia*</label>
+                    <div class="col-sm-3">
+                        <div class="form-check">
+                            <input class="form-check-input" name="hypox" type="radio" value="1" id="hypox1"
+                                   checked><label
+                                for="hypox1">yes</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" name="hypox" type="radio" value="0" id="hypox2"><label
+                                for="hypox2">no</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm">
+                        *severe hypoxemia defined as needing more than 4 liters of supplemental oxygen, non-rebreather
+                        mask
+                        or
+                        non-invasive (e.g. BiPAP) or invasive ventilation to maintain an oxygen saturation of >=90% , or
+                        failure to
+                        maintain an oxygen saturation of >=90%
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm">
+                        <label type="submit" class="btn btn-primary" onclick="calculate()">Calculate Mortality
+                            Risk</label>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm">
+                        <h5>7-Day Mortality, %
+                            <div id="m7"></div>
+                        </h5>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-sm">
+                        <h5>14-Day Mortality, %
+                            <div id="m14"></div>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row pt-5">
+                    <div class="col-sm">
+                        -Division of Gastroenterology and Hepatology, Weill Cornell Medicine, New York-Presbyterian
+                        Hospital, New York, NY, USA
+                        <br>
+                        -Division of Gastroenterology, Hepatology and Endoscopy, Brigham and Women's Hospital, Boston,
+                        MA,
+                        USA
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 </div>
 
 <script type="text/javascript">
-    console.log("hello");
 
     function calculate() {
         let age = parseInt(document.getElementById("age").value);
-        let map = parseInt(document.getElementById("map").value);
+        let dbp = parseInt(document.getElementById("dbp").value);
+        let sdb = parseInt(document.getElementById("sbp").value);
         let scr = parseInt(document.getElementById("scr").value);
         let hypox = parseInt(document.querySelector('input[name="hypox"]:checked').value)
 
-            let scr2;
+        let map = Math.min((2 * dbp + sdb) / 3, 55)
+
+        let scr2;
         if (scr >= 2) scr2 = 1
         if (scr < 2) scr2 = 0
 
@@ -115,8 +149,8 @@
                 0.5365 * (scr2) +
                 0.4425 * (hypox) - 19.2738));
 
-        document.getElementById("m7").innerHTML = m7.toFixed(1);
-        document.getElementById("m14").innerHTML = m14.toFixed(1);
+        document.getElementById("m7").innerHTML = Math.floor(m7);
+        document.getElementById("m14").innerHTML = Math.ceil(m14);
     }
 
 
