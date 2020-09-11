@@ -132,23 +132,23 @@
         if (scr >= 2) scr2 = 1
         if (scr < 2) scr2 = 0
 
-        let m7 = 100 * (Math.exp(Math.log(age) * 6.4947 +
-            Math.log(map) * (-2.5365) +
-            0.3197 * (scr2) +
-            0.5864 * (hypox) - 19.0309)) /
-            (1 + Math.exp(Math.log(age) * 6.4947 +
-                Math.log(map) * (-2.5365) +
-                0.3197 * (scr2) +
-                0.5864 * (hypox) - 19.0309));
+        let m7 = 100 * (Math.exp(Math.log(age) * 7.8913 +
+            Math.log(map) * (-1.5434) +
+            1.0738 * (scr2) +
+            0.9385 * (hypox) - 29.8233)) /
+            (1 + Math.exp(Math.log(age) * 7.8913 +
+                Math.log(map) * (-1.5434) +
+                1.0738 * (scr2) +
+                0.9385 * (hypox) - 29.8233));
 
-        let m14 = 100 * (Math.exp(Math.log(age) * 5.9314 +
-            Math.log(map) * (-1.8549) +
-            0.5365 * (scr2) +
-            0.4425 * (hypox) - 19.2738)) /
-            (1 + Math.exp(Math.log(age) * 5.9314 +
-                Math.log(map) * (-1.8549) +
-                0.5365 * (scr2) +
-                0.4425 * (hypox) - 19.2738));
+        let m14 = 100 * (Math.exp(Math.log(age) * 6.4001 +
+            Math.log(map) * (-1.2073) +
+            1.0281 * (scr2) +
+            0.7977 * (hypox) - 24.1700)) /
+            (1 + Math.exp(Math.log(age) * 6.4001 +
+                Math.log(map) * (-1.2073) +
+                1.0281 * (scr2) +
+                0.7977 * (hypox) - 24.1700));
 
         let roundedM7 = Math.round(m7);
         let roundedM14 = Math.round(m14);
